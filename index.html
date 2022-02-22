@@ -115,8 +115,8 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>bibliography<span class="op">:</span><span class="st"> </span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="op">-</span><span class="st"> </span>document_citations.bib</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="op">-</span><span class="st"> </span>grateful<span class="op">-</span>refs.bib</span></code></pre></div>
-<p>Then call <code>cite_packages(output = "paragraph")</code> within a code chunk (specifying chunk option: <code>results = "asis"</code>) to automatically include a paragraph mentioning all the used packages, and include their references in the bibliography list.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="st">```</span><span class="dt">{r results = 'asis'}</span></span>
+<p>Then call <code>cite_packages(output = "paragraph")</code> within a code chunk (block or inline) to automatically include a paragraph mentioning all the used packages, and include their references in the bibliography list.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="st">```</span><span class="dt">{r}</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="dt">cite_packages(output = "paragraph")</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="st">```</span></span></code></pre></div>
 <p><code>We used R version 4.1.2 [@base] and the following R packages: lme4 v. 1.1.27.1 [@lme4], mgcv v. 1.8.38 [@mgcv2003; @mgcv2004; @mgcv2011; @mgcv2016; @mgcv2017].</code></p>
@@ -126,7 +126,7 @@
 <span id="cb9-3"><a href="#cb9-3"></a><span class="dt">pkgs &lt;- cite_packages(output = "table")</span></span>
 <span id="cb9-4"><a href="#cb9-4"></a><span class="dt">kable(pkgs)</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="st">```</span></span></code></pre></div>
-<p><img src="reference/figures/table.png" width="1271"></p>
+<p><img src="reference/figures/table.png"><!-- --></p>
 <p>If you want the references to appear in a particular format, you can specify the citation style in the YAML header:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>bibliography<span class="op">:</span><span class="st"> </span>grateful<span class="op">-</span>refs.bib</span>
 <span id="cb10-2"><a href="#cb10-2"></a>csl<span class="op">:</span><span class="st"> </span>peerj.csl</span></code></pre></div>
@@ -141,17 +141,17 @@
 </h3>
 <p>Use <code>scan_packages</code></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">scan_packages</span>()</span>
-<span id="cb11-2"><a href="#cb11-2"></a>          pkg version</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="dv">1</span>        base   <span class="dv">4</span>.<span class="fl">1.2</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="dv">2</span>        covr   <span class="dv">3</span>.<span class="fl">5.1</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="dv">3</span>    grateful  <span class="dv">0</span>.<span class="fl">1.10</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="dv">4</span>       knitr    <span class="fl">1.37</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="dv">5</span>     pkgdown   <span class="dv">2</span>.<span class="fl">0.2</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="dv">6</span>     remotes   <span class="dv">2</span>.<span class="fl">4.2</span></span>
-<span id="cb11-9"><a href="#cb11-9"></a><span class="dv">7</span>        renv  <span class="dv">0</span>.<span class="fl">15.2</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a><span class="dv">8</span>   rmarkdown    <span class="fl">2.11</span></span>
-<span id="cb11-11"><a href="#cb11-11"></a><span class="dv">9</span>  rstudioapi    <span class="fl">0.13</span></span>
-<span id="cb11-12"><a href="#cb11-12"></a><span class="dv">10</span>   testthat   <span class="dv">3</span>.<span class="fl">1.2</span></span></code></pre></div>
+<span id="cb11-2"><a href="#cb11-2"></a>         pkg version</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="dv">1</span>       base   <span class="dv">4</span>.<span class="fl">1.2</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="dv">2</span>       covr   <span class="dv">3</span>.<span class="fl">5.1</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="dv">3</span>   grateful  <span class="dv">0</span>.<span class="fl">1.11</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="dv">4</span>      knitr    <span class="fl">1.37</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="dv">5</span>    pkgdown   <span class="dv">2</span>.<span class="fl">0.2</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="dv">6</span>    remotes   <span class="dv">2</span>.<span class="fl">4.2</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="dv">7</span>       renv  <span class="dv">0</span>.<span class="fl">15.2</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="dv">8</span>  rmarkdown    <span class="fl">2.11</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="dv">9</span>   testthat   <span class="dv">3</span>.<span class="fl">1.2</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="dv">10</span> tidyverse   <span class="dv">1</span>.<span class="fl">3.1</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="producing-a-bibtex-file-with-package-references">Producing a BibTeX file with package references<a class="anchor" aria-label="anchor" href="#producing-a-bibtex-file-with-package-references"></a>
@@ -247,7 +247,7 @@
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Francisco Rodriguez-Sanchez <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7981-1599" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Connor P. Jackson <br><small class="roles"> Author </small>  </li>
+<li>Connor P. Jackson <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4220-5210" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
